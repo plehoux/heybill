@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'heybill'
+Heybill::CLI.start
