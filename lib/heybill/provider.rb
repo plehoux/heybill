@@ -23,7 +23,7 @@ module Heybill
       self.from = Chronic.parse(options[:from]).to_date
       self.to = Chronic.parse(options[:to]).to_date
       self.save_to = Pathname.new(options[:save_to]) || Pathname.new('./')
-      paper_size = { format: 'Letter',  border: '0.50in' }
+      self.paper_size = { format: 'Letter',  border: '0.50in' }
     end
 
     def fetch
