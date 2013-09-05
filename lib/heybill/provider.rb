@@ -27,35 +27,45 @@ module Heybill
     end
 
     def fetch
-      self.class.steps.each do |step|
-        say "#{humanize(step)}..." unless "#{step}".start_with? 'ask_'
+      for step in self.class.steps
+        say "<%= color('#{humanize(step)}...', BOLD) %>" unless "#{step}".start_with? 'ask_'
         unless send(step)
           say "There was a problem trying to #{humanize(step)}"
-          break
+          broke = true; break
         end
       end
+      say 'Done!' unless broke
     end
 
     def provider_name
       humanize(underscore(self.class.name.split('::').last))
     end
 
+    def saved file_name
+      say "-> <%= color('#{file_name}', GREEN) %>"
+    end
+
     def save_page_as_bill(date)
-      path = save_to + Bill.new(provider_name, date).file_name
+      file_name = Bill.new(provider_name, date).file_name
+      path = save_to + file_name
       save_screenshot(path)
+      saved(file_name)
     end
 
     def save_pdf_as_bill(date, url)
+      file_name = Bill.new(provider_name, date).file_name
+
       cookies = page.driver.cookies.map do |key, cookie|
         "#{key}=#{cookie.value}"
       end.join(';')
 
-      path = save_to + Bill.new(provider_name, date).file_name
+      path = save_to + file_name
       File.open(path, 'w') do |saved_file|
         open(url,"Cookie" => cookies) do |file|
           saved_file.write(file.read)
         end
       end
+      saved(file_name)
     end
 
     def paper_size=(size)
