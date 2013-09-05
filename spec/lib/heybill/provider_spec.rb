@@ -4,10 +4,10 @@ describe Heybill::Provider do
   subject { Heybill::Provider.new(from: 'june 2012', to: 'april 2013', save_to: '~/') }
 
   context '#initialize' do
-    it 'initializes @to, @from & @save_to with good type' do
-      expect(subject.instance_variable_get :@to).to      be_an_instance_of Date
-      expect(subject.instance_variable_get :@from).to    be_an_instance_of Date
-      expect(subject.instance_variable_get :@save_to).to be_an_instance_of Pathname
+    it 'initializes to, from & save_to with good type' do
+      expect(subject.to).to      be_an_instance_of Date
+      expect(subject.from).to    be_an_instance_of Date
+      expect(subject.save_to).to be_an_instance_of Pathname
     end
   end
 

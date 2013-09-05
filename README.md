@@ -59,7 +59,7 @@ module Heybill
       end
 
       fetch_bills do
-        # Find every html or PDF invoices included between @from and @to
+        # Find every html or PDF invoices included between self.from and self.to
         # Save each invoice with one of those two helpers:
 
         # If invoice an html document:

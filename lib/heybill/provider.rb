@@ -16,13 +16,13 @@ module Heybill
   class Provider
     include Capybara::DSL
 
-    DEFAULT_SAVE_TO_PATH = Pathname.new('./')
+    attr_accessor :save_to, :from, :to
 
     def initialize options
-      @from = Chronic.parse(options[:from]).to_date
-      @to   = Chronic.parse(options[:to]).to_date
-      @save_to = Pathname.new(options[:save_to])
-      set_paper_size
+      self.from = Chronic.parse(options[:from]).to_date
+      self.to = Chronic.parse(options[:to]).to_date
+      self.save_to = Pathname.new(options[:save_to]) || Pathname.new('./')
+      paper_size = { format: 'Letter',  border: '0.50in' }
     end
 
     def fetch
@@ -35,23 +35,19 @@ module Heybill
       end
     end
 
-    def save_to_path
-      @save_to || DEFAULT_SAVE_TO_PATH
-    end
-
     def save_page_as_bill(file_name)
-      save_screenshot(save_to_path + file_name)
+      save_screenshot(save_to + file_name)
     end
 
     def save_pdf_as_bill(file_name, url, session_cookie)
-      File.open(save_to_path + file_name, 'w') do |saved_file|
+      File.open(save_to + file_name, 'w') do |saved_file|
         open(url,"Cookie" => session_cookie) do |file|
           saved_file.write(file.read)
         end
       end
     end
 
-    def set_paper_size(size = { format: 'Letter',  border: '0.50in' })
+    def paper_size=(size)
       page.driver.paper_size = size
     end
 

@@ -16,7 +16,7 @@ module Heybill
       fetch_bills do
         visit 'https://github.com/settings/payments'        
         within("#payment-history") do
-          (@from..@to).map{ |m| m.strftime('%F') }.uniq.each do |date|
+          (from..to).map{ |m| m.strftime('%F') }.uniq.each do |date|
             date_cell = first('td.date', text: date)
             next unless date_cell
             link = date_cell.first(:xpath,".//..").find_link('Download Receipt')['href']
