@@ -30,7 +30,7 @@ binary.
 ## Usage ##
 
 ```
-heybill fetch [PROVIDER] --from 'june 2012' --to 'may 2013' --save-to ~/Documents/expenses
+heybill fetch [PROVIDER] --from 'june 2012' --to 'last month' --save-to ~/Documents/expenses
 ```
 
 ## List of supported providers ##
