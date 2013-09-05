@@ -18,4 +18,5 @@ spec = Gem::Specification.new do |s|
   s.add_dependency 'capybara', '~> 2.1.0'
   s.add_dependency 'plehoux-poltergeist', '~> 1.4.0'
   s.add_dependency 'highline', '~> 1.6.2'
+  s.add_dependency 'chronic', '~> 0.10.1'
 end

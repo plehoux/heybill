@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    Heybill (0.0.1)
+    heybill (0.0.2)
       capybara (~> 2.1.0)
+      chronic (~> 0.10.1)
       highline (~> 1.6.2)
       plehoux-poltergeist (~> 1.4.0)
       thor (~> 0.18)
@@ -16,6 +17,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chronic (0.10.1)
     cliver (0.2.1)
     diff-lcs (1.2.4)
     highline (1.6.19)
@@ -49,5 +51,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Heybill!
+  heybill!
   rspec
