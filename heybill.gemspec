@@ -16,6 +16,6 @@ spec = Gem::Specification.new do |s|
   s.executables << 'heybill'
   s.add_dependency 'thor', '~> 0.18'
   s.add_dependency 'capybara', '~> 2.1.0'
-  s.add_dependency 'poltergeist', '~> 1.4.0'
+  s.add_dependency 'plehoux-poltergeist', '~> 1.4.0'
   s.add_dependency 'highline', '~> 1.6.2'
 end

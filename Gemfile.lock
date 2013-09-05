@@ -1,20 +1,10 @@
-GIT
-  remote: git://github.com/jonleighton/poltergeist.git
-  revision: 1e614751181b2b8a72f70284bd42e3b24f24ae7a
-  specs:
-    poltergeist (1.4.0)
-      capybara (~> 2.1.0)
-      cliver (~> 0.2.1)
-      multi_json (~> 1.0)
-      websocket-driver (>= 0.2.0)
-
 PATH
   remote: .
   specs:
     Heybill (0.0.1)
       capybara (~> 2.1.0)
       highline (~> 1.6.2)
-      poltergeist (~> 1.4.0)
+      plehoux-poltergeist (~> 1.4.0)
       thor (~> 0.18)
 
 GEM
@@ -34,6 +24,11 @@ GEM
     multi_json (1.7.9)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    plehoux-poltergeist (1.4.0)
+      capybara (~> 2.1.0)
+      cliver (~> 0.2.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -55,5 +50,4 @@ PLATFORMS
 
 DEPENDENCIES
   Heybill!
-  poltergeist!
   rspec
