@@ -1,13 +1,27 @@
 require 'spec_helper'
 
 describe Heybill::Provider do
-  subject { Heybill::Provider.new(from: 'june 2012', to: 'april 2013', save_to: '~/') }
+  subject { Heybill::Provider.new(from: 'june 2012', to: 'april 2013') }
 
   context '#initialize' do
     it 'initializes to, from & save_to with good type' do
       expect(subject.to).to      be_an_instance_of Date
       expect(subject.from).to    be_an_instance_of Date
       expect(subject.save_to).to be_an_instance_of Pathname
+    end
+
+    context 'with a save_to option passed' do
+      subject { Heybill::Provider.new(from: 'june 2012', to: 'april 2013', save_to: '/tmp') }
+      it 'defines save_to to save_to option' do
+        expect(subject.save_to).to eq Pathname.new('/tmp')
+      end
+    end
+
+    context 'with no save_to option passed' do
+      subject { Heybill::Provider.new(from: 'april 2012', to: 'september 2013') }
+      it 'defines save_to to save_to option' do
+        expect(subject.save_to).to eq Pathname.new(Dir.pwd)
+      end
     end
   end
 
