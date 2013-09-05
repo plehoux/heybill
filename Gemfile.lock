@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    heybill (0.0.2)
+    heybill (0.0.3)
       capybara (~> 2.1.0)
       chronic (~> 0.10.1)
       highline (~> 1.6.2)
