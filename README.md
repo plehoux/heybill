@@ -4,6 +4,8 @@ Heybill
 
 Heybill is a command line app that automatically fetch bills/invoices from providers.
 
+![Heybill in action](./preview.png)
+
 ## Installation ##
 
 ```
