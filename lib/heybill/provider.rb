@@ -11,6 +11,7 @@ Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, js_errors: false)
 end
 Capybara.current_driver = :poltergeist
+Capybara.ignore_hidden_elements = false
 
 module Heybill
   class Provider
