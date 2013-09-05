@@ -7,7 +7,7 @@ module Heybill
       log_in do
         login_url = 'https://github.com/login'
         visit login_url
-        fill_in 'login_field',    with: @username
+        fill_in 'login_field', with: @username
         fill_in 'password', with: @password
         click_button 'Sign in'
         current_url != login_url

@@ -7,7 +7,7 @@ module Heybill
       log_in do
         login_url = 'https://id.heroku.com/login'
         visit login_url
-        fill_in 'email',    with: @email
+        fill_in 'email', with: @email
         fill_in 'password', with: @password
         click_button 'Log In'
         current_url != login_url
