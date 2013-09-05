@@ -1,4 +1,5 @@
 require 'ostruct'
+require 'chronic'
 require 'open-uri'
 require 'pathname'
 require 'capybara'
@@ -18,8 +19,8 @@ module Heybill
     DEFAULT_SAVE_TO_PATH = Pathname.new('./')
 
     def initialize options
-      @from = Date.parse options[:from]
-      @to = Date.parse options[:to]
+      @from = Date.parse Chronic.parse(options[:from]).to_s
+      @to = Date.parse Chronic.parse(options[:to]).to_s
       @save_to = Pathname.new(options[:save_to])
       set_paper_size
     end
