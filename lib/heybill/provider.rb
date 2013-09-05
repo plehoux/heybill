@@ -36,12 +36,18 @@ module Heybill
       end
     end
 
-    def save_page_as_bill(file_name)
-      save_screenshot(save_to + file_name)
+    def provider_name
+      humanize(underscore(self.class.name.split('::').last))
     end
 
-    def save_pdf_as_bill(file_name, url, session_cookie)
-      File.open(save_to + file_name, 'w') do |saved_file|
+    def save_page_as_bill(date)
+      path = save_to + Bill.new(provider_name, date).file_name
+      save_screenshot(path)
+    end
+
+    def save_pdf_as_bill(date, url, session_cookie)
+      path = save_to + Bill.new(provider_name, date).file_name
+      File.open(path, 'w') do |saved_file|
         open(url,"Cookie" => session_cookie) do |file|
           saved_file.write(file.read)
         end

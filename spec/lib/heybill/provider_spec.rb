@@ -11,6 +11,15 @@ describe Heybill::Provider do
     end
   end
 
+  context '#provider_name' do
+    before do
+      subject.class.stub(:name).and_return "Heybill::Provider::AcmeCorp"
+    end
+    it "returns humanize provider's name" do
+      expect(subject.provider_name).to eq 'Acme corp'
+    end
+  end
+
   context '#fetch' do
     let(:output) { capture(:stdout) { subject.fetch } }
     it 'does not output step info if it is a question' do
