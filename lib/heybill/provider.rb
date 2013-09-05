@@ -19,8 +19,8 @@ module Heybill
     DEFAULT_SAVE_TO_PATH = Pathname.new('./')
 
     def initialize options
-      @from = Date.parse Chronic.parse(options[:from]).to_s
-      @to = Date.parse Chronic.parse(options[:to]).to_s
+      @from = Chronic.parse(options[:from]).to_date
+      @to   = Chronic.parse(options[:to]).to_date
       @save_to = Pathname.new(options[:save_to])
       set_paper_size
     end
