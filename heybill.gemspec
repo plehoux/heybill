@@ -1,7 +1,7 @@
 # Ensure we require the local version and not one we might have installed already
 require File.join([File.dirname(__FILE__),'lib','heybill','version.rb'])
 spec = Gem::Specification.new do |s| 
-  s.name = 'Heybill'
+  s.name = 'heybill'
   s.version = Heybill::VERSION
   s.author = 'Philippe-Antoine Lehoux'
   s.email = 'plehoux@gmail.com'
