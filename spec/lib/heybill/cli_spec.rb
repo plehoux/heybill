@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Heybill::CLI do
-  context '.providers' do
+  context '#providers' do
     let(:output) { capture(:stdout) { subject.providers } }
     it 'returns a list of all providers' do
       Heybill::Provider.stub(:all).and_return(
