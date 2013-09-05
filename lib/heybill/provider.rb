@@ -15,6 +15,7 @@ Capybara.current_driver = :poltergeist
 module Heybill
   class Provider
     include Capybara::DSL
+    include Utils
 
     attr_accessor :save_to, :from, :to
 
@@ -27,9 +28,9 @@ module Heybill
 
     def fetch
       self.class.steps.each do |step|
-        say "#{Utils.humanize(step)}..." unless "#{step}".start_with? 'ask_'
+        say "#{humanize(step)}..." unless "#{step}".start_with? 'ask_'
         unless send(step)
-          say "There was a problem trying to #{Utils.humanize(step)}"
+          say "There was a problem trying to #{humanize(step)}"
           break
         end
       end
@@ -61,7 +62,7 @@ module Heybill
           if name == :password
             -> {@password = ask("Password?  ") { |q| q.echo = false }}
           else
-            -> {instance_variable_set("@#{name}", ask("#{Utils.humanize(name)}?  "))}
+            -> {instance_variable_set("@#{name}", ask("#{humanize(name)}?  "))}
           end
         instance_define_method "ask_#{name}", block
       end
