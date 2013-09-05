@@ -67,7 +67,7 @@ module Heybill
         save_page_as_bill("acme_1.pdf")
 
         # If invoice a PDF:
-        save_pdf_as_bill("acme_1.pdf", 'http://acme.com/invoices/1.pdf', "session_cookie=12345abcdefg")
+        save_pdf_as_bill("acme_1.pdf", 'http://acme.com/invoices/1.pdf')
       end
     end
   end

@@ -45,10 +45,14 @@ module Heybill
       save_screenshot(path)
     end
 
-    def save_pdf_as_bill(date, url, session_cookie)
+    def save_pdf_as_bill(date, url)
+      cookies = page.driver.cookies.map do |key, cookie|
+        "#{key}=#{cookie.value}"
+      end.join(';')
+
       path = save_to + Bill.new(provider_name, date).file_name
       File.open(path, 'w') do |saved_file|
-        open(url,"Cookie" => session_cookie) do |file|
+        open(url,"Cookie" => cookies) do |file|
           saved_file.write(file.read)
         end
       end

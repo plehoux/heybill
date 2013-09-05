@@ -20,11 +20,7 @@ module Heybill
             date_cell = first('td.date', text: date)
             next unless date_cell
             link = date_cell.first(:xpath,".//..").find_link('Download Receipt')['href']
-            save_pdf_as_bill(
-              date,
-              "https://github.com#{link}",
-              "_gh_sess=#{page.driver.cookies['_gh_sess'].value}"
-            )
+            save_pdf_as_bill(date, "https://github.com#{link}")
           end
         end
       end
