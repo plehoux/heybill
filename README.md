@@ -1,6 +1,3 @@
-Heybill
-=======
-
 
 <p align="center">
   <a href="https://github.com/plehoux/Heybill">
@@ -9,8 +6,8 @@ Heybill
 </p>
 
 <p align="center">
-  Heybill is a command line app that automatically fetch bills/invoices from providers.<br>
-  [![Build Status](https://travis-ci.org/plehoux/Heybill.png)](https://travis-ci.org/plehoux/Heybill)
+  <b>Heybill</b> is a command line app that automatically fetch bills/invoices from providers.<br>
+  <a href="https://travis-ci.org/plehoux/Heybill"><img src="https://travis-ci.org/plehoux/Heybill.png"></a>
 </p>
 
 ## Installation ##
