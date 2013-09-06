@@ -10,11 +10,15 @@ module Heybill
         fill_in 'login_field', with: @username
         fill_in 'password', with: @password
         click_button 'Sign in'
-        current_url != login_url
+        if page.has_css? 'body.page-two-factor-auth'
+          fill_in 'otp', with: ask("Authentication code?  ")
+          click_button 'Verify'
+        end
+        !(current_url =~ /session|login/)
       end
 
       fetch_bills do
-        visit 'https://github.com/settings/payments'        
+        visit 'https://github.com/settings/payments'
         within("#payment-history") do
           (from..to).each do |date|
             date_cell = first('td.date', text: date)
