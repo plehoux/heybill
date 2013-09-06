@@ -18,7 +18,7 @@ Heybill
 gem install heybill
 ```
 
-You also need [PhantomJS](http://phantomjs.org/download.html] (>= 1.8.1).
+You also need [PhantomJS](http://phantomjs.org/download.html] >= 1.8.1.
 
 ## Usage ##
 
