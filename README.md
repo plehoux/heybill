@@ -29,7 +29,7 @@ heybill fetch [PROVIDER] --from 'june 2012' --to 'last month' --save-to ~/Docume
 ## List of supported providers ##
 
 - Heroku
-- Github
+- GitHub
 - Webfaction
 
 ## Contribute ##
