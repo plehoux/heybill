@@ -8,7 +8,10 @@ require 'capybara/poltergeist'
 
 Capybara.run_server = false
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, js_errors: false)
+  Capybara::Poltergeist::Driver.new(app,
+    js_errors: false,
+    phantomjs_logger: File::NULL
+  )
 end
 Capybara.current_driver = :poltergeist
 Capybara.ignore_hidden_elements = false
