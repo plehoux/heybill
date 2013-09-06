@@ -8,8 +8,8 @@ Heybill
 </p>
 
 <p align="center">
-  <i>Heybill</i> lets you automatically fetch bills/invoices from providers.<br><br>
-  <a href="https://travis-ci.org/plehoux/Heybill"><img src="https://travis-ci.org/plehoux/Heybill.png"></a>
+  <strong>Heybill</strong> lets you automatically fetch your bills/invoices from the command line.<br><br>
+  <a href="http://badge.fury.io/rb/heybill"><img src="https://badge.fury.io/rb/heybill@2x.png" alt="Gem Version" height="18"></a> <a href="https://travis-ci.org/plehoux/Heybill"><img src="https://travis-ci.org/plehoux/Heybill.png"></a>
 </p>
 
 ## Installation ##
@@ -18,23 +18,7 @@ Heybill
 gem install heybill
 ```
 
-You also need PhantomJS (>= 1.8.1).
-
-### Mac ###
-
-* *Homebrew*: `brew install phantomjs`
-
-### Linux ###
-
-* Download the [32
-bit](http://code.google.com/p/phantomjs/downloads/detail?name=phantomjs-1.8.1-linux-i686.tar.bz2&can=2&q=)
-or [64
-bit](http://code.google.com/p/phantomjs/downloads/detail?name=phantomjs-1.8.1-linux-x86_64.tar.bz2&can=2&q=)
-binary.
-* Extract the tarball and copy `bin/phantomjs` into your `PATH`
-
-### Windows ###
-* Download the [precompiled binary](http://phantomjs.org/download.html) for Windows
+You also need [PhantomJS](http://phantomjs.org/download.html] (>= 1.8.1).
 
 ## Usage ##
 
@@ -73,10 +57,10 @@ module Heybill
 
         # If invoice an html document:
         visit('http://acme.com/invoices/1')
-        save_page_as_bill("acme_1.pdf")
+        save_page_as_bill(date)
 
         # If invoice a PDF:
-        save_pdf_as_bill("acme_1.pdf", 'http://acme.com/invoices/1.pdf')
+        save_pdf_as_bill(date, 'http://acme.com/invoices/1.pdf')
       end
     end
   end
