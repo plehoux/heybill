@@ -1,3 +1,5 @@
+Heybill
+=======
 
 <p align="center">
   <a href="https://github.com/plehoux/Heybill">
@@ -6,7 +8,7 @@
 </p>
 
 <p align="center">
-  <b>Heybill</b> is a command line app that automatically fetch bills/invoices from providers.<br>
+  <i>Heybill</i> lets you automatically fetch bills/invoices from providers.<br><br>
   <a href="https://travis-ci.org/plehoux/Heybill"><img src="https://travis-ci.org/plehoux/Heybill.png"></a>
 </p>
 
