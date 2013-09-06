@@ -1,10 +1,17 @@
 Heybill
 =======
-[![Build Status](https://travis-ci.org/plehoux/Heybill.png)](https://travis-ci.org/plehoux/Heybill)
 
-Heybill is a command line app that automatically fetch bills/invoices from providers.
 
-![Heybill in action](./preview.png)
+<p align="center">
+  <a href="https://github.com/plehoux/Heybill">
+    <img src="./preview.png">
+  </a>
+</p>
+
+<p align="center">
+  Heybill is a command line app that automatically fetch bills/invoices from providers.<br>
+  [![Build Status](https://travis-ci.org/plehoux/Heybill.png)](https://travis-ci.org/plehoux/Heybill)
+</p>
 
 ## Installation ##
 
