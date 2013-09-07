@@ -8,7 +8,7 @@ module Heybill
         visit 'https://robot.your-server.de/login'
         fill_in 'user', with: @username
         fill_in 'password', with: @password
-        click_button 'Anmelden'
+        find('.submit_row input[type=submit]').click
         page.status_code == 200
       end
 
