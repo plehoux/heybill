@@ -31,6 +31,7 @@ heybill fetch [PROVIDER] --from 'june 2012' --to 'last month' --save-to ~/Docume
 - Heroku
 - GitHub
 - Webfaction
+- Hetzner
 
 ## Contribute ##
 
