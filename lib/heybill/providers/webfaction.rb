@@ -10,7 +10,7 @@ module Heybill
         fill_in 'id_username', with: @username
         fill_in 'id_password', with: @password
         click_button 'Login'
-        page.status_code == 200
+        !page.has_css?('#loginbox')
       end
 
       fetch_bills do

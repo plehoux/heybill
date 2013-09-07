@@ -9,7 +9,7 @@ module Heybill
         fill_in 'user', with: @username
         fill_in 'password', with: @password
         find('.submit_row input[type=submit]').click
-        page.status_code == 200
+        !page.has_css?('#startpage_login')
       end
 
       fetch_bills do
