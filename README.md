@@ -34,6 +34,7 @@ heybill fetch [PROVIDER] --from 'june 2012' --to 'last month' --save-to ~/Docume
 - Hetzner
 - Videotron Affaires/Business
 - Pingdom
+- Telus Mobility
 
 ## Contribute ##
 
