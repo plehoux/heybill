@@ -33,6 +33,7 @@ heybill fetch [PROVIDER] --from 'june 2012' --to 'last month' --save-to ~/Docume
 - Webfaction
 - Hetzner
 - Videotron Affaires/Business
+- Pingdom
 
 ## Contribute ##
 
