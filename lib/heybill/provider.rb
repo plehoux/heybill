@@ -24,8 +24,8 @@ module Heybill
     attr_accessor :save_to, :from, :to
 
     def initialize options
-      self.from = Chronic.parse(options[:from]).to_date
-      self.to = Chronic.parse(options[:to]).to_date
+      self.from = Chronic.parse(options[:from], guess: :begin).to_date
+      self.to = Chronic.parse(options[:to], guess: :begin).to_date
       self.save_to = Pathname.new(options[:save_to] || Dir.pwd)
       self.paper_size = { format: 'Letter',  border: '0.50in' }
     end
