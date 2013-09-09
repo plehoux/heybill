@@ -28,6 +28,7 @@ heybill fetch [PROVIDER] --from 'june 2012' --to 'last month' --save-to ~/Docume
 
 ## List of supported providers ##
 
+- Amazon Web Services
 - Heroku
 - GitHub
 - Webfaction
