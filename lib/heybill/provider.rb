@@ -56,7 +56,7 @@ module Heybill
       saved(file_name)
     end
 
-    def save_pdf_as_bill(date, url)
+    def save_pdf_as_bill(date, url, headers = {})
       file_name = Bill.new(provider_name, date).file_name
 
       cookies = page.driver.cookies.map do |key, cookie|
@@ -64,9 +64,9 @@ module Heybill
       end.join(';')
 
       path = save_to + file_name
-      File.open(path, 'w') do |saved_file|
-        open(url,"Cookie" => cookies) do |file|
-          saved_file.write(file.read)
+      File.open(path, 'w') do |destination|
+        open(url, {'Cookie' => cookies}.merge(headers)) do |file|
+          destination.write(file.read)
         end
       end
       saved(file_name)
