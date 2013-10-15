@@ -9,7 +9,7 @@ Heybill
 
 <p align="center">
   <strong>Heybill</strong> lets you automatically fetch your bills/invoices from the command line.<br><br>
-  <a href="http://badge.fury.io/rb/heybill"><img src="https://badge.fury.io/rb/heybill@2x.png" alt="Gem Version" height="18"></a> <a href="https://travis-ci.org/plehoux/Heybill"><img src="https://travis-ci.org/plehoux/Heybill.png"></a>
+  <a href="http://badge.fury.io/rb/heybill"><img src="https://badge.fury.io/rb/heybill@2x.png" alt="Gem Version" height="18"></a> <a href="https://travis-ci.org/plehoux/heybill"><img src="https://travis-ci.org/plehoux/heybill.png"></a>
 </p>
 
 ## Installation ##
